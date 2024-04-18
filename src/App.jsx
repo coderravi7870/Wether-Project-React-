@@ -31,16 +31,20 @@ function App() {
       <div className="container">
         <div className="ItemsContainer">
           <InputForm setCity={setCity} />
-          {invalidWeatherData !== null ? (
-            <div>{invalidWeatherData}</div>
+          {city ? (
+            invalidWeatherData !== null ? (
+              <p>{invalidWeatherData}</p>
+            ) : (
+              <>
+                <Temp temp={wetherData} />
+                <div className="items">
+                  <Humidity hum={wetherData} />
+                  <Speed speed={wetherData} />
+                </div>
+              </>
+            )
           ) : (
-            <>
-              <Temp temp={wetherData} />
-              <div className="items">
-                <Humidity hum={wetherData} />
-                <Speed speed={wetherData} />
-              </div>
-            </>
+            <p>Enter City name</p>
           )}
         </div>
       </div>

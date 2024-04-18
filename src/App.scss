@@ -22,6 +22,11 @@
     margin-top: 20px;
     align-items: center;
     // position: relative;
+    p {
+      font-size: large;
+      font-weight: 700;
+      margin-top: 10px;
+    }
     .items {
       display: flex;
       justify-content: space-evenly;
