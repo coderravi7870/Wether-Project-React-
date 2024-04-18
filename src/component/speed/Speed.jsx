@@ -3,7 +3,12 @@ import "./style.scss";
 const Speed = ({ speed }) => {
   const sunsetTime = speed?.sys?.sunset;
   const newData = new Date(sunsetTime * 1000);
-  const data = newData.toLocaleTimeString();
+  const data = newData.toLocaleTimeString(undefined, {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true,
+  });
   return (
     <div className="speed_container">
       <div className="speed1">

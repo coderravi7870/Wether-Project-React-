@@ -7,7 +7,12 @@ const Humidity = ({ hum }) => {
   const sunriseDate = new Date(sunriseTimestamp * 1000);
 
   // Convert to readable date and time strings
-  const sunriseReadable = sunriseDate.toLocaleTimeString(); // Convert to local time string
+  const sunriseReadable = sunriseDate.toLocaleTimeString(undefined, {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true,
+  }); // Convert to local time string
 
   return (
     <div className="hum_container">
